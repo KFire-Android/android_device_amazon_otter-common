@@ -1,4 +1,4 @@
-ifeq ($(findstring bowser, $(TARGET_BOOTLOADER_BOARD_NAME)),otter)
+ifeq ($(findstring otter, $(TARGET_BOOTLOADER_BOARD_NAME)),otter)
 LOCAL_PATH := $(call my-dir)
 
 ifneq ($(TARGET_SIMULATOR),true)
