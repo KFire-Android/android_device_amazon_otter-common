@@ -57,13 +57,6 @@ PRODUCT_PACKAGES += \
     Superuser \
     su
 
-# AOSP specific
-ifeq ($(findstring full_otter, $(TARGET_PRODUCT)),full_otter)
-# Prebuilt /system/media
-PRODUCT_COPY_FILES += \
-    $(OTTER_COMMON_FOLDER)/prebuilt/media/bootanimation.zip:/system/media/bootanimation.zip
-endif
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160 \
     persist.lab126.chargeprotect=1 \

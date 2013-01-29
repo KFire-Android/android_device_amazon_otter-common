@@ -4,7 +4,7 @@ TARGET_SCREEN_HEIGHT := 1024
 # Inherit some common cyanogenmod stuff.
 $(call inherit-product-if-exists, vendor/cm/config/common_full_tablet_wifionly.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/amazon/otter-common/overlay/cm
+DEVICE_PACKAGE_OVERLAYS += device/amazon/otter-common/overlay
 
 PRODUCT_BRAND := Android
 PRODUCT_MANUFACTURER := Amazon
