@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
 # Prebuilt /system/etc/firmware
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/firmware/ducati-m3.512MB.bin:system/etc/firmware/ducati-m3.512MB.bin \
-    $(OTTER_COMMON_FOLDER)/firmware/ducati-m3.bin:system/etc/firmware/ducati-m3.bin.bak \
+    $(OTTER_COMMON_FOLDER)/firmware/ducati-m3.bin:system/etc/firmware/ducati-m3.bin \
     $(OTTER_COMMON_FOLDER)/firmware/ti-connectivity/wl127x-fw-4-mr.bin:system/etc/firmware/ti-connectivity/wl127x-fw-4-mr.bin \
     $(OTTER_COMMON_FOLDER)/firmware/ti-connectivity/wl127x-fw-4-plt.bin:system/etc/firmware/ti-connectivity/wl127x-fw-4-plt.bin \
     $(OTTER_COMMON_FOLDER)/firmware/ti-connectivity/wl127x-fw-4-sr.bin:system/etc/firmware/ti-connectivity/wl127x-fw-4-sr.bin \
