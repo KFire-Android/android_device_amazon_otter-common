@@ -13,16 +13,15 @@ PRODUCT_PACKAGES += \
     calibrator \
     crda \
     regulatory.bin \
-    lib_driver_cmd_wl12xx \
+    lib_driver_cmd_wl12xx
 
 # Rootfs
 PRODUCT_COPY_FILES += \
-    $(OTTER_COMMON_FOLDER)/init.omap4430.usb.rc:/root/init.omap4430.usb.rc \
-    $(OTTER_COMMON_FOLDER)/ueventd.omap4430.rc:/root/ueventd.omap4430.rc \
+    $(OTTER_COMMON_FOLDER)/ueventd.omap4430.rc:/root/ueventd.omap4430.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
 # Prebuilts /system/bin
 PRODUCT_COPY_FILES += \
@@ -39,19 +38,19 @@ PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/firmware/ti-connectivity/wl127x-fw-4-plt.bin:system/etc/firmware/ti-connectivity/wl127x-fw-4-plt.bin \
     $(OTTER_COMMON_FOLDER)/firmware/ti-connectivity/wl127x-fw-4-sr.bin:system/etc/firmware/ti-connectivity/wl127x-fw-4-sr.bin \
     $(OTTER_COMMON_FOLDER)/firmware/ti-connectivity/wl1271-nvs_127x.bin:system/etc/firmware/ti-connectivity/wl1271-nvs_127x.bin \
-    $(OTTER_COMMON_FOLDER)/firmware/ti-connectivity/TQS_S_2.6.ini:/system/etc/wifi/TQS_S_2.6.ini \
+    $(OTTER_COMMON_FOLDER)/firmware/ti-connectivity/TQS_S_2.6.ini:/system/etc/wifi/TQS_S_2.6.ini
 
 # Prebuilts /system/etc
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/audio_policy.conf:/system/etc/audio_policy.conf \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/media_codecs.xml:/system/etc/media_codecs.xml \
-    $(OTTER_COMMON_FOLDER)/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml
 
 # Prebuilt /system/usr
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/ilitek_i2c.idc:/system/usr/idc/ilitek_i2c.idc \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/twl6030_pwrbutton.idc:/system/usr/idc/twl6030_pwrbutton.idc \
-    $(OTTER_COMMON_FOLDER)/prebuilt/usr/keylayout/twl6030_pwrbutton.kl:/system/usr/keylayout/twl6030_pwrbutton.kl \
+    $(OTTER_COMMON_FOLDER)/prebuilt/usr/keylayout/twl6030_pwrbutton.kl:/system/usr/keylayout/twl6030_pwrbutton.kl
 
 PRODUCT_PACKAGES += \
     librs_jni \
@@ -69,7 +68,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160 \
     persist.lab126.chargeprotect=1 \
-    ro.sf.hwrotation=270 \
+    ro.sf.hwrotation=270
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, $(COMMON_FOLDER)/imgtec/sgx-imgtec-bins-540.mk)
