@@ -1,4 +1,5 @@
 OTTER_COMMON_FOLDER := device/amazon/otter-common
+TARGET_BOARD_OMAP_CPU := 4430
 
 # inherit from common
 -include device/amazon/omap4-common/BoardConfigCommon.mk
