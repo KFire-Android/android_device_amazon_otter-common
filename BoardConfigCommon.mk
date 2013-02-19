@@ -1,4 +1,19 @@
+# Copyright (C) 2013 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 OTTER_COMMON_FOLDER := device/amazon/otter-common
+TARGET_BOARD_OMAP_CPU := 4430
 
 # inherit from common
 -include device/amazon/omap4-common/BoardConfigCommon.mk
@@ -7,7 +22,10 @@ OTTER_COMMON_FOLDER := device/amazon/otter-common
 -include vendor/amazon/otter-common/BoardConfigVendor.mk
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := false
+BOARD_HAVE_BLUETOOTH := true
+BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
+BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/amazon/otter-common/bluetooth
 
 # Camera
 TI_OMAP4_CAMERAHAL_VARIANT := false
@@ -47,6 +65,10 @@ WIFI_FIRMWARE_LOADER             := ""
 PRODUCT_WIRELESS_TOOLS           := true
 COMMON_GLOBAL_CFLAGS += -DUSES_TI_MAC80211
 endif
+
+# Custom DOMX
+TI_CUSTOM_DOMX_PATH := $(OTTER_COMMON_FOLDER)/domx
+DOMX_PATH := $(OTTER_COMMON_FOLDER)/domx
 
 # Graphics
 BOARD_EGL_CFG := $(OTTER_COMMON_FOLDER)/prebuilt/etc/egl.cfg

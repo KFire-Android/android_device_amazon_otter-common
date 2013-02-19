@@ -9,7 +9,7 @@ LOCAL_C_INCLUDES += \
 	$(LOCAL_PATH)/../inc \
 	$(LOCAL_PATH)/../../ \
 	$(LOCAL_PATH)/../../omx_rpc/inc \
-	$(DEVICE_FOLDER)/domx
+	$(LOCAL_PATH)/../../../domx
 
 LOCAL_CFLAGS += -D_Android
 
