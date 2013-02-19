@@ -8,7 +8,10 @@ TARGET_BOARD_OMAP_CPU := 4430
 -include vendor/amazon/otter-common/BoardConfigVendor.mk
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := false
+BOARD_HAVE_BLUETOOTH := true
+BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
+BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/amazon/otter-common/bluetooth
 
 # Camera
 TI_OMAP4_CAMERAHAL_VARIANT := false
