@@ -71,8 +71,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160 \
-    persist.lab126.chargeprotect=1 \
-    ro.sf.hwrotation=270
+    persist.lab126.chargeprotect=1
+
+#    ro.sf.hwrotation=270
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/imgtec/amazon-common/device-partial-540.mk)
