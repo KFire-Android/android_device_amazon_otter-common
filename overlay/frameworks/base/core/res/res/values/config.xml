@@ -18,7 +18,7 @@
 -->
 
 <!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds. -->
+     for different hardware and product builds.  Do not translate. -->
 <resources>
 
     <!-- This device is not "voice capable"; it's data-only. -->
@@ -114,5 +114,9 @@
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
+
+    <!-- Timeout in MS for how long you have to long-press the back key to
+         kill the foreground app. -->
+    <integer name="config_backKillTimeout">1500</integer>
 
 </resources>
