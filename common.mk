@@ -17,6 +17,8 @@ OTTER_COMMON_FOLDER := device/amazon/otter-common
 
 $(call inherit-product, $(COMMON_FOLDER)/common.mk)
 
+DEVICE_PACKAGE_OVERLAYS += $(OTTER_COMMON_FOLDER)/overlay/aosp
+
 PRODUCT_AAPT_CONFIG := normal mdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
@@ -55,6 +57,13 @@ PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/ilitek_i2c.idc:/system/usr/idc/ilitek_i2c.idc \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/twl6030_pwrbutton.idc:/system/usr/idc/twl6030_pwrbutton.idc \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/keylayout/twl6030_pwrbutton.kl:/system/usr/keylayout/twl6030_pwrbutton.kl
+
+# AOSP specific
+ifeq ($(findstring full_otter, $(TARGET_PRODUCT)),full_otter)
+# Prebuilt /system/media
+PRODUCT_COPY_FILES += \
+    $(OTTER_COMMON_FOLDER)/prebuilt/media/bootanimation.zip:/system/media/bootanimation.zip
+endif
 
 PRODUCT_PACKAGES += \
     librs_jni \
