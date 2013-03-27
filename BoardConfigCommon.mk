@@ -89,9 +89,6 @@ DOMX_PATH := $(OTTER_COMMON_FOLDER)/domx
 # Graphics
 BOARD_EGL_CFG := $(OTTER_COMMON_FOLDER)/prebuilt/etc/egl.cfg
 
-# OTA Packaging
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := $(OTTER_COMMON_FOLDER)/releasetools/ota_from_target_files
-
 # TWRP Config
 DEVICE_RESOLUTION := 1024x600
 RECOVERY_TOUCHSCREEN_SWAP_XY := true
