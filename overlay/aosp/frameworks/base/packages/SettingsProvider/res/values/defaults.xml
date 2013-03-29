@@ -22,4 +22,6 @@
     <!-- Default for UI touch sounds disabled to solve wakelock issue -->
     <integer name="def_lockscreen_sounds_enabled">0</integer>
     <bool name="def_sound_effects_enabled">false</bool>
+    <!-- Default for Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL -->
+    <integer name="def_brightness_control">1</integer>
 </resources>
