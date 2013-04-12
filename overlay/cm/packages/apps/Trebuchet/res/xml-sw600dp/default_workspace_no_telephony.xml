@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites xmlns:launcher="http://schemas.android.com/apk/res/com.cyanogenmod.trebuchet">
+    <!-- Far-left screen [0] -->
+
+    <!-- Left screen [1] -->
+    <appwidget
+        launcher:packageName="com.andrew.apollo"
+        launcher:className="com.andrew.apollo.appwidgets.AppWidgetLarge"
+        launcher:screen="1"
+        launcher:x="1"
+        launcher:y="0"
+        launcher:spanX="4"
+        launcher:spanY="2" />
+
+    <!-- Middle screen [2] -->
+    <appwidget
+        launcher:packageName="com.cyanogenmod.lockclock"
+        launcher:className="com.cyanogenmod.lockclock.ClockWidgetProvider"
+        launcher:screen="2"
+        launcher:x="0"
+        launcher:y="0"
+        launcher:spanX="6"
+        launcher:spanY="3" />
+    <favorite
+        launcher:packageName="com.android.gallery3d"
+        launcher:className="com.android.camera.CameraLauncher"
+        launcher:screen="2"
+        launcher:x="5"
+        launcher:y="1" />
+
+    <!-- Right screen [3] -->
+    <favorite
+        launcher:packageName="com.android.gallery3d"
+        launcher:className="com.android.gallery3d.app.Gallery"
+        launcher:screen="3"
+        launcher:x="1"
+        launcher:y="3" />
+    <favorite
+        launcher:packageName="com.android.settings"
+        launcher:className="com.android.settings.Settings"
+        launcher:screen="3"
+        launcher:x="2"
+        launcher:y="3" />
+
+    <!-- Far-right screen [4] -->
+
+    <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
+    <favorite
+        launcher:packageName="com.android.email"
+        launcher:className="com.android.email.activity.Welcome"
+        launcher:container="-101"
+        launcher:screen="0"
+        launcher:x="1"
+        launcher:y="0" />
+    <favorite
+        launcher:packageName="com.android.calendar"
+        launcher:className="com.android.calendar.AllInOneActivity"
+        launcher:container="-101"
+        launcher:screen="0"
+        launcher:x="2"
+        launcher:y="0" />
+    <allapps
+        launcher:container="-101"
+        launcher:screen="0"
+        launcher:x="3"
+        launcher:y="0" />
+    <favorite
+        launcher:packageName="com.android.contacts"
+        launcher:className="com.android.contacts.activities.PeopleActivity"
+        launcher:container="-101"
+        launcher:screen="0"
+        launcher:x="4"
+        launcher:y="0" />
+    <favorite
+        launcher:packageName="com.android.browser"
+        launcher:className="com.android.browser.BrowserActivity"
+        launcher:container="-101"
+        launcher:screen="0"
+        launcher:x="5"
+        launcher:y="0" />
+</favorites>
