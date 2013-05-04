@@ -13,13 +13,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <com.cyanogenmod.settings.device.SeekBarPreference
-        android:key="touch_slider"
-        android:title="@string/touch_filter_title"
-        android:dialogMessage="Filter level"
-        android:max="100"
-        android:defaultValue="0" />
-
-</PreferenceScreen>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Geavanceerde instellingen</string>
+    <string name="category_touchscreen_title">Aanraakscherm</string>
+    <string name="touch_filter_title">Filterniveau</string>
+</resources>
