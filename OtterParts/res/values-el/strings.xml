@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Ρυθμίσεις για προχωρημένους</string>
     <string name="category_touchscreen_title">Οθόνη αφής</string>
     <string name="touch_filter_title">Επίπεδο φίλτρου οθόνης αφής</string>
