@@ -29,6 +29,14 @@ PRODUCT_PACKAGES += \
     regulatory.bin \
     lib_driver_cmd_wl12xx
 
+# Apps
+PRODUCT_PACKAGES += \
+    OtterParts
+
+# Tweaks
+PRODUCT_PACKAGES += \
+    armzipalign
+
 # Rootfs
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/ueventd.omap4430.rc:/root/ueventd.omap4430.rc
@@ -46,7 +54,7 @@ PRODUCT_COPY_FILES += \
 
 # audio config files for otter
 PRODUCT_COPY_FILES += \
-    $(OTTER_COMMON_FOLDER)/audio/audio_policy.conf:/system/etc/audio_policy.conf \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/audio_policy.conf:/system/etc/audio_policy.conf \
 
 # Prebuilt /system/usr
 PRODUCT_COPY_FILES += \
