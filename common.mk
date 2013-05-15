@@ -54,7 +54,7 @@ PRODUCT_COPY_FILES += \
 
 # audio config files for otter
 PRODUCT_COPY_FILES += \
-    $(OTTER_COMMON_FOLDER)/audio/audio_policy.conf:/system/etc/audio_policy.conf \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/audio_policy.conf:/system/etc/audio_policy.conf \
 
 # Prebuilt /system/usr
 PRODUCT_COPY_FILES += \
