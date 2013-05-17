@@ -17,11 +17,11 @@ LOCAL_SRC_FILES:= \
     omx_base_dio_plugin/src/omx_base_dio_non_tunnel.c
 
 LOCAL_C_INCLUDES += \
-    $(LOCAL_PATH)/../system/omx_core/inc \
-    $(LOCAL_PATH)/../system/mm_osal/inc \
-    $(HARDWARE_TI_OMAP4_BASE)/include/ \
+    $(LOCAL_PATH)/../omx_core/inc \
+    $(LOCAL_PATH)/../mm_osal/inc \
+    $(COMMON_FOLDER)/include/ \
     system/core/include/cutils \
-    $(HARDWARE_TI_OMAP4_BASE)/../../libhardware/include \
+    hardware/libhardware/include \
     $(LOCAL_PATH)/memplugin/inc/ \
     $(LOCAL_PATH)/omx_base_dio_plugin/inc/ \
     $(LOCAL_PATH)/omx_base_comp/inc/ \
@@ -39,4 +39,4 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_MODULE:= libOMX
 LOCAL_MODULE_TAGS:= optional
 
-include $(BUILD_HEAPTRACKED_SHARED_LIBRARY)
+include $(BUILD_SHARED_LIBRARY)

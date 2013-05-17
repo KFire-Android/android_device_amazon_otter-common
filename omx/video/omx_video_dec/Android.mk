@@ -7,12 +7,12 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES += \
-	$(HARDWARE_TI_OMAP4_BASE)/omx/base/omx_base_comp/inc \
-	$(HARDWARE_TI_OMAP4_BASE)/omx/system/omx_core/inc \
-	$(HARDWARE_TI_OMAP4_BASE)/omx/system/mm_osal/inc \
-	$(HARDWARE_TI_OMAP4_BASE)/../../libhardware/include \
-	$(HARDWARE_TI_OMAP4_BASE)/hwc/ \
-	$(HARDWARE_TI_OMAP4_BASE)/omx/base/memplugin/inc/ \
+    $(LOCAL_PATH)/../../base/omx_base_comp/inc \
+    $(LOCAL_PATH)/../../omx_core/inc \
+    $(LOCAL_PATH)/../../mm_osal/inc \
+    hardware/libhardware/include \
+    $(COMMON_FOLDER)/hwc/ \
+    $(LOCAL_PATH)/../../base/memplugin/inc/ \
     $(LOCAL_PATH)/libdce/inc/ \
     $(LOCAL_PATH)/omx_videodec_common/inc/ \
     $(LOCAL_PATH)/omx_h264_dec/inc/ \
@@ -43,4 +43,5 @@ LOCAL_SRC_FILES:= omx_videodec_common/src/omx_video_decoder.c \
 
 
 LOCAL_MODULE:= libOMX.TI.DUCATI1.VIDEO.DECODER
-include $(BUILD_HEAPTRACKED_SHARED_LIBRARY)
+
+include $(BUILD_SHARED_LIBRARY)
