@@ -144,13 +144,13 @@ void BMA250Sensor::processEvent(int code, int value)
 */
     switch (code) {
         case EVENT_TYPE_ACCEL_X:
-            mPendingEvent.acceleration.x = value * CONVERT_A_X;
+            mPendingEvent.acceleration.x = value * CONVERT_A_Y;
             break;
         case EVENT_TYPE_ACCEL_Y:
-            mPendingEvent.acceleration.y = value * CONVERT_A_Y;
+            mPendingEvent.acceleration.y = value * CONVERT_A_X;
             break;
         case EVENT_TYPE_ACCEL_Z:
-            mPendingEvent.acceleration.z = value * CONVERT_A_Z;
+            mPendingEvent.acceleration.z = value * -CONVERT_A_Z;
             break;
     }
 }
