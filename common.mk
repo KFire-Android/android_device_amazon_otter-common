@@ -42,11 +42,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/media_codecs.xml:/system/etc/media_codecs.xml \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
-    $(OTTER_COMMON_FOLDER)/prebuilt/etc/mixer_paths.xml:/system/etc/mixer_paths.xml
 
 # audio config files for otter
 PRODUCT_COPY_FILES += \
-    $(OTTER_COMMON_FOLDER)/audio/audio_policy.conf:/system/etc/audio_policy.conf \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/audio_policy.conf:/system/etc/audio_policy.conf \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/mixer_paths.xml:/system/etc/mixer_paths.xml
 
 # Prebuilt /system/usr
 PRODUCT_COPY_FILES += \
