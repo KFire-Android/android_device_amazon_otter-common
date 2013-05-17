@@ -69,6 +69,7 @@ PRODUCT_PACKAGES += \
 
 # TI OMAP4
 PRODUCT_PACKAGES += \
+    libOMX \
     libdomx \
     libOMX_Core \
     libOMX.TI.DUCATI1.VIDEO.H264E \
