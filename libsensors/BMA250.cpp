@@ -116,7 +116,7 @@ int BMA250Sensor::readEvents(sensors_event_t* data, int count)
 
     while (count && mInputReader.readEvent(&event)) {
         int type = event->type;
-        ALOGD("BMA250: event (type=%d, code=%d, value=%d)", type, event->code, event->value);
+//      ALOGD("BMA250: event (type=%d, code=%d, value=%d)", type, event->code, event->value);
         if ((type == EV_ABS) || (type == EV_REL)) {
             processEvent(event->code, event->value);
         } else if (type == EV_SYN) {
