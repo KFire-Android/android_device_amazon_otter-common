@@ -27,8 +27,8 @@
 #include "SensorBase.h"
 #include "InputEventReader.h"
 
-#define BMA250_ENABLE_FILE "/sys/class/input/input1/enable"
-#define BMA250_DELAY_FILE  "/sys/class/input/input1/delay"
+#define BMA250_ENABLE_FILE "/sys/bus/i2c/devices/4-0018/enable"
+#define BMA250_DELAY_FILE  "/sys/bus/i2c/devices/4-0018/delay"
 
 /*****************************************************************************/
 
@@ -45,7 +45,7 @@ public:
     void processEvent(int code, int value);
 
 private:
-    uint32_t mEnabled;
+    int mEnabled;
     InputEventCircularReader mInputReader;
     sensors_event_t mPendingEvent;
 

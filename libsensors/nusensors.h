@@ -37,8 +37,6 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
-#define ID_A  (0)
-
 /*****************************************************************************/
 
 /*

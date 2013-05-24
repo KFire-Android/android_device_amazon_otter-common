@@ -27,7 +27,7 @@
 static const struct sensor_t sSensorList[] = {
         { "BMA250 3-axis Accelerometer",
           "Bosch Sensortec GmbH",
-          1, SENSORS_HANDLE_BASE+ID_A,
+          1, SENSORS_HANDLE_BASE+SENSOR_TYPE_ACCELEROMETER,
           SENSOR_TYPE_ACCELEROMETER,
           (16.0f*GRAVITY_EARTH),
           (16.0f*GRAVITY_EARTH)/4096,

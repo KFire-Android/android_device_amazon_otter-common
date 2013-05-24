@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_NDEBUG 0
 #include <hardware/sensors.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -56,7 +55,7 @@ private:
 
     int handleToDriver(int handle) const {
         switch (handle) {
-            case ID_A:
+            case SENSOR_TYPE_ACCELEROMETER:
             	return bma250;
         }
         return -EINVAL;

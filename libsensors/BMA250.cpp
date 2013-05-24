@@ -27,6 +27,8 @@
 
 #include "BMA250.h"
 
+#define TAG "BMA250"
+
 /*****************************************************************************/
 
 BMA250Sensor::BMA250Sensor()
@@ -35,7 +37,7 @@ BMA250Sensor::BMA250Sensor()
       mInputReader(32)
 {
     mPendingEvent.version = sizeof(sensors_event_t);
-    mPendingEvent.sensor = ID_A;
+    mPendingEvent.sensor = SENSOR_TYPE_ACCELEROMETER;
     mPendingEvent.type = SENSOR_TYPE_ACCELEROMETER;
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
     mPendingEvent.acceleration.status = SENSOR_STATUS_ACCURACY_HIGH;
@@ -49,7 +51,9 @@ int BMA250Sensor::enable(int32_t handle, int en)
 {
     int err = 0;
 
-    unsigned int newState = en ? 1 : 0;
+    int newState = en ? 1 : 0;
+
+    // ALOGD(TAG ": Setting enable: %d", en);
 
     // don't set enable state if it's already valid
     if (mEnabled == newState) {
@@ -66,7 +70,7 @@ int BMA250Sensor::enable(int32_t handle, int en)
         err = -errno;
     }
 
-    ALOGE_IF(err < 0, "Error setting enable of bma250 accelerometer (%s)", strerror(-err));
+    ALOGE_IF(err < 0, TAG ": Error setting enable of bma250 accelerometer (%s)", strerror(-err));
 
     if (!err) {
         mEnabled = newState;
@@ -79,6 +83,8 @@ int BMA250Sensor::enable(int32_t handle, int en)
 int BMA250Sensor::setDelay(int32_t handle, int64_t ns)
 {
     int err = 0;
+
+    // ALOGD(TAG ": Setting delay: %lluns", ns);
 
     if (mEnabled) {
         if (ns < 0)
@@ -96,7 +102,7 @@ int BMA250Sensor::setDelay(int32_t handle, int64_t ns)
             err = -errno;
         }
 
-        ALOGE_IF(err < 0, "Error setting delay of bma250 accelerometer (%s)", strerror(-err));
+        ALOGE_IF(err < 0, TAG ": Error setting delay of bma250 accelerometer (%s)", strerror(-err));
     }
 
     return err;
@@ -104,6 +110,8 @@ int BMA250Sensor::setDelay(int32_t handle, int64_t ns)
 
 int BMA250Sensor::readEvents(sensors_event_t* data, int count)
 {
+    // ALOGD(TAG ": readEvents: count == %d", count);
+
     if (count < 1)
         return -EINVAL;
 
@@ -115,18 +123,16 @@ int BMA250Sensor::readEvents(sensors_event_t* data, int count)
     input_event const* event;
 
     while (count && mInputReader.readEvent(&event)) {
-        int type = event->type;
-//      ALOGD("BMA250: event (type=%d, code=%d, value=%d)", type, event->code, event->value);
-        if ((type == EV_ABS) || (type == EV_REL)) {
+        // ALOGD(TAG ": event (type=%d, code=%d, value=%d)", event->type, event->code, event->value);
+        if ((event->type == EV_ABS) || (event->type == EV_REL)) {
             processEvent(event->code, event->value);
-        } else if (type == EV_SYN) {
+        } else if (event->type == EV_SYN) {
             mPendingEvent.timestamp = timevalToNano(event->time);
             *data++ = mPendingEvent;
             count--;
             numEventReceived++;
         } else {
-            ALOGE("BMA250: unknown event (type=%d, code=%d)",
-                    type, event->code);
+            ALOGE(TAG ": unknown event (type=%d, code=%d)", event->type, event->code);
         }
         mInputReader.next();
     }
@@ -157,20 +163,21 @@ void BMA250Sensor::processEvent(int code, int value)
 
 int BMA250Sensor::isEnabled()
 {
+    int ret = 0;
     int fd = open(BMA250_ENABLE_FILE, O_RDONLY);
     if (fd >= 0) {
         char buffer[20];
         int amt = read(fd, buffer, 20);
         close(fd);
         if(amt > 0) {
-            return (buffer[0] == '1');
+            ret = (buffer[0] == '1');
         } else {
-            ALOGE("BMA250: isEnable failed to read (%s)", strerror(errno));
-            return 0;
+            ALOGE(TAG ": isEnable failed to read (%s)", strerror(errno));
         }
     } else {
-        ALOGE("BMA250: isEnabled failed to open %s", BMA250_ENABLE_FILE);
-        return 0;
+        ALOGE(TAG ": isEnabled failed to open %s", BMA250_ENABLE_FILE);
     }
+    // ALOGD(TAG ": isEnabled == %d", ret);
+    return ret;
 }
 
