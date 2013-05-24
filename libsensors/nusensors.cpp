@@ -29,6 +29,7 @@
 
 #include "nusensors.h"
 #include "BMA250.h"
+#include "STK-ALS22x7.h"
 /*****************************************************************************/
 
 struct sensors_poll_context_t {
@@ -42,7 +43,8 @@ struct sensors_poll_context_t {
 
 private:
     enum {
-        bma250           = 0,
+        bma250   = 0,
+        als22x7  = 1,
         numSensorDrivers,
         numFds,
     };
@@ -57,6 +59,8 @@ private:
         switch (handle) {
             case SENSOR_TYPE_ACCELEROMETER:
             	return bma250;
+            case SENSOR_TYPE_LIGHT:
+            	return als22x7;
         }
         return -EINVAL;
     }
@@ -70,6 +74,11 @@ sensors_poll_context_t::sensors_poll_context_t()
     mPollFds[bma250].fd = mSensors[bma250]->getFd();
     mPollFds[bma250].events = POLLIN;
     mPollFds[bma250].revents = 0;
+
+    mSensors[als22x7] = new STK_ALS22x7Sensor();
+    mPollFds[als22x7].fd = mSensors[als22x7]->getFd();
+    mPollFds[als22x7].events = POLLIN;
+    mPollFds[als22x7].revents = 0;
 
     int wakeFds[2];
     int result = pipe(wakeFds);

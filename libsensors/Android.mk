@@ -33,7 +33,8 @@ LOCAL_SRC_FILES := \
 	nusensors.cpp \
 	InputEventReader.cpp \
 	SensorBase.cpp \
-	BMA250.cpp
+	BMA250.cpp \
+	STK-ALS22x7.cpp
 
 LOCAL_SHARED_LIBRARIES := liblog libcutils
 LOCAL_PRELINK_MODULE := false
