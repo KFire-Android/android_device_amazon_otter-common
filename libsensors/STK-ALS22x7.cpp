@@ -35,7 +35,7 @@ STK_ALS22x7Sensor::STK_ALS22x7Sensor()
       mInputReader(32)
 {
     mPendingEvent.version = sizeof(sensors_event_t);
-    mPendingEvent.sensor = SENSOR_TYPE_LIGHT;
+    mPendingEvent.sensor = ID_B;
     mPendingEvent.type = SENSOR_TYPE_LIGHT;
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
     mEnabled = isEnabled();

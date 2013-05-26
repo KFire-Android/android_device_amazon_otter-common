@@ -37,7 +37,7 @@ BMA250Sensor::BMA250Sensor()
       mInputReader(32)
 {
     mPendingEvent.version = sizeof(sensors_event_t);
-    mPendingEvent.sensor = SENSOR_TYPE_ACCELEROMETER;
+    mPendingEvent.sensor = ID_A;
     mPendingEvent.type = SENSOR_TYPE_ACCELEROMETER;
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
     mPendingEvent.acceleration.status = SENSOR_STATUS_ACCURACY_HIGH;
