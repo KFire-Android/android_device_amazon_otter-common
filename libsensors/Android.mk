@@ -27,12 +27,14 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_CFLAGS := -DLOG_TAG=\"Sensors\"
+#LOCAL_CFLAGS += -DLOG_NDEBUG=0
 LOCAL_SRC_FILES := \
 	sensors.c \
 	nusensors.cpp \
 	InputEventReader.cpp \
 	SensorBase.cpp \
-	BMA250.cpp
+	BMA250.cpp \
+	STK-ALS22x7.cpp
 
 LOCAL_SHARED_LIBRARIES := liblog libcutils
 LOCAL_PRELINK_MODULE := false
