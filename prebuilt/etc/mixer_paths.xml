@@ -10,11 +10,14 @@
 	<ctl name="DL1 PDM Switch" value="1" />
 	<ctl name="DL1 BT_VX Switch" value="0" />
 	<!-- turn off voice -->
-	<ctl name="Sidetone Mixer Capture" value="0" />
+	<!-- <ctl name="Sidetone Mixer Capture" value="0" /> -->
 	<!-- no pop -->
 	<ctl name="DL1 Mixer Multimedia" value="0" />
 	<ctl name="DL1 PDM Switch" value="0" />
 	<ctl name="DL1 BT_VX Switch" value="0" />
+	<!-- enable speaker -->
+	<ctl name="DL1 MM_EXT Switch" value="1" />
+	<ctl name="DL1 Mono Mixer" value="0" />
 
 	<path name="speaker">
 		<!-- codec output controls -->
@@ -24,13 +27,11 @@
 		<ctl name="Right DAC input selection" value="right data" />
 		<ctl name="Left DAC input selection" value="left data" />
 		<ctl name="Right Output Mixer From DAC_R" value="1" />
+		<ctl name="Left Output Mixer From DAC_L" value="1" />
 		<ctl name="HP driver mute" value="1" />
 		<ctl name="HP Analog Gain" value="127" />
 		<ctl name="DL1 Mixer Multimedia" value="1" />
 		<ctl name="Sidetone Mixer Playback" value="1" />
-		<ctl name="DL1 Mono Mixer" value="0" />
-		<!-- enable speaker -->
-		<ctl name="DL1 MM_EXT Switch" value="1" />
 	</path>
 
 	<path name="headphone">
@@ -41,13 +42,12 @@
 		<ctl name="Right DAC input selection" value="right data" />
 		<ctl name="Left DAC input selection" value="left data" />
 		<ctl name="Right Output Mixer From DAC_R" value="1" />
+		<ctl name="Left Output Mixer From DAC_L" value="1" />
 		<ctl name="HP driver mute" value="1" />
 		<ctl name="HP Analog Gain" value="127" />
 		<ctl name="DL1 Mixer Multimedia" value="1" />
 		<ctl name="Sidetone Mixer Playback" value="1" />
 		<ctl name="DL1 Mono Mixer" value="0" />
-		<!-- enable speaker -->
-		<ctl name="DL1 MM_EXT Switch" value="1" />
 	</path>
 
 	<path name="headset">
@@ -58,8 +58,6 @@
 		<!-- <ctl name="ADC MIC_PGA GAIN" value="50" /> -->
 		<ctl name="AUDUL Voice UL Volume" value="120" />
 		<ctl name="SDT UL Volume" value="120" />
-		<!-- enable speaker -->
-		<ctl name="DL1 MM_EXT Switch" value="1" />
 		<ctl name="Sidetone Mixer Capture" value="1" />
 	</path>
 </mixer>
