@@ -96,5 +96,5 @@ DEVICE_RESOLUTION := 1024x600
 RECOVERY_TOUCHSCREEN_SWAP_XY := true
 RECOVERY_TOUCHSCREEN_FLIP_Y := true
 TARGET_USERIMAGES_USE_EXT4 := true
-TW_BRIGHTNESS_PATH := /sys/class/backlight/lcd-backlight/brightness
+TW_BRIGHTNESS_PATH := /sys/devices/platform/omap_pwm_led/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 254

@@ -34,7 +34,7 @@
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 
-char const *const LCD_FILE = "/sys/class/backlight/lcd-backlight/brightness";
+char const *const LCD_FILE = "/sys/class/leds/lcd-backlight/brightness";
 char const *const ORANGE_LED_FILE = "/sys/class/leds/led-green";
 char const *const GREEN_LED_FILE = "/sys/class/leds/led-orange";
 
