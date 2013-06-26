@@ -34,13 +34,23 @@
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 
+static struct light_state_t g_battery;
+static struct light_state_t g_notification;
+static int g_charge_led_active;
+
 char const *const LCD_FILE = "/sys/class/backlight/lcd-backlight/brightness";
-char const *const ORANGE_LED_FILE = "/sys/class/leds/led-green";
-char const *const GREEN_LED_FILE = "/sys/class/leds/led-orange";
+
+/* RGB file descriptors */
+char const *const ORANGE_LED_FILE = "/sys/class/leds/led-green/brightness";
+char const *const ORANGE_BLINK_FILE = "/sys/class/leds/led-green/blink";
+char const *const GREEN_LED_FILE = "/sys/class/leds/led-orange/brightness";
 
 void init_globals(void) {
 	// init the mutex
 	pthread_mutex_init(&g_lock, NULL);
+	memset(&g_battery, 0, sizeof(g_battery));
+	memset(&g_notification, 0, sizeof(g_notification));
+	g_charge_led_active = 0;
 }
 
 static int write_int(char const *path, int value) {
@@ -96,6 +106,43 @@ static int set_light_backlight(struct light_device_t *dev,
 	return err;
 }
 
+static int set_light_locked(struct light_device_t *dev,
+		struct light_state_t *state) {
+	int err = 0;
+	int orange, green;
+
+	orange = (state->color >> 16) & 0xFF;
+	green = (state->color >> 8) & 0xFF;
+
+	// ensure blinking is off
+	err = write_int(ORANGE_BLINK_FILE, 0);
+
+	// set colors
+	err = write_int(ORANGE_LED_FILE, orange);
+	err = write_int(GREEN_LED_FILE, green);
+
+	// blink if supposed to
+	if (state->flashMode != LIGHT_FLASH_NONE) {
+		err = write_int(ORANGE_BLINK_FILE, 255);
+	}
+
+	return err;
+}
+
+static int handle_light_locked(struct light_device_t *dev) {
+	int retval = 0;
+	int show_charge = g_charge_led_active;
+
+	if (is_lit(&g_notification)) {
+		retval = set_light_locked(dev, &g_notification);
+		show_charge = 0;
+	} else {
+		retval = set_light_locked(dev, &g_battery);
+	}
+
+	return retval;
+}
+
 static int set_light_keyboard(struct light_device_t* dev,
 		struct light_state_t const* state) {
 	/* There is not keyboard on the Kindle Fire */
@@ -110,13 +157,19 @@ static int set_light_buttons(struct light_device_t* dev,
 
 static int set_light_battery(struct light_device_t* dev,
 		struct light_state_t const* state) {
-	/* Battery leds are handled by the kernel on the Kindle Fire */
+	pthread_mutex_lock(&g_lock);
+	g_battery = *state;
+	handle_light_locked(dev);
+	pthread_mutex_unlock(&g_lock);
 	return 0;
 }
 
 static int set_light_notification(struct light_device_t* dev,
 		struct light_state_t const* state) {
-	/* There is no dedicated notification LED on the Blaze Tablet */
+	pthread_mutex_lock(&g_lock);
+	g_notification = *state;
+	handle_light_locked(dev);
+	pthread_mutex_unlock(&g_lock);
 	return 0;
 }
 
