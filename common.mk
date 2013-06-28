@@ -37,26 +37,27 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
+# Prebuilts /system/bin
+PRODUCT_COPY_FILES += \
+    $(OTTER_COMMON_FOLDER)/prebuilt/bin/bbx:/system/bin/bbx
 
 # Prebuilts /system/etc
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/audio_policy.conf:/system/etc/audio_policy.conf \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/media_codecs.xml:/system/etc/media_codecs.xml \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
-    $(OTTER_COMMON_FOLDER)/prebuilt/etc/mixer_paths.xml:/system/etc/mixer_paths.xml
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/mixer_paths.xml:/system/etc/mixer_paths.xml \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/firmware/ti-connectivity/wl127x-fw-4-mr.bin:/system/etc/firmware/ti-connectivity/wl127x-fw-4-mr.bin \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/firmware/ti-connectivity/wl127x-fw-4-plt.bin:/system/etc/firmware/ti-connectivity/wl127x-fw-4-plt.bin \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/firmware/ti-connectivity/wl127x-fw-4-sr.bin:/system/etc/firmware/ti-connectivity/wl127x-fw-4-sr.bin \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/firmware/ti-connectivity/wl1271-nvs_127x.bin:/system/etc/firmware/ti-connectivity/wl1271-nvs_127x.bin \
+    $(OTTER_COMMON_FOLDER)/prebuilt/etc/wifi/TQS_S_2.6.ini:/system/etc/wifi/TQS_S_2.6.ini
 
 # Prebuilt /system/usr
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/ilitek_i2c.idc:/system/usr/idc/ilitek_i2c.idc \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/twl6030_pwrbutton.idc:/system/usr/idc/twl6030_pwrbutton.idc \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/keylayout/twl6030_pwrbutton.kl:/system/usr/keylayout/twl6030_pwrbutton.kl
-
-# AOSP specific
-ifeq ($(findstring full_otter, $(TARGET_PRODUCT)),full_otter)
-# Prebuilt /system/media
-PRODUCT_COPY_FILES += \
-    $(OTTER_COMMON_FOLDER)/prebuilt/media/bootanimation.zip:/system/media/bootanimation.zip
-endif
 
 PRODUCT_PACKAGES += \
     librs_jni \
@@ -90,5 +91,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.hwrotation=270
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
-$(call inherit-product-if-exists, vendor/imgtec/amazon-common/device-partial-540.mk)
-$(call inherit-product-if-exists, vendor/amazon/otter-common/otter-common-vendor.mk)
