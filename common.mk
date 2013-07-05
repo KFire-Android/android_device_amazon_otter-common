@@ -90,4 +90,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.lab126.chargeprotect=1 \
     ro.sf.hwrotation=270
 
+# Set dirty regions off
+PRODUCT_PROPERTY_OVERRIDES += \
+    hwui.render_dirty_regions=false
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
