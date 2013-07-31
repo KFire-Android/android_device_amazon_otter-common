@@ -27,18 +27,6 @@
     <!-- This device does not allow sms service. -->
     <bool name="config_sms_capable">false</bool>
 
-    <!-- Flag indicating whether the surface flinger has limited
-         alpha compositing functionality in hardware.  If set, the window
-         manager will disable alpha trasformation in animations where not
-         strictly needed. -->
-    <bool name="config_sf_limitedAlpha">false</bool>
-
-    <!-- Flag indicating whether the surface flinger is inefficient
-         at performing a blur.  Used by parts of the UI to turn off
-         the blur effect where it isn't worth the performance hit.
-         As of Honeycomb, blurring is not supported anymore. -->
-    <bool name="config_sf_slowBlur">false</bool>
-
     <!-- XXXXX NOTE THE FOLLOWING RESOURCES USE THE WRONG NAMING CONVENTION.
          Please don't copy them, copy anything else. -->
 
@@ -68,12 +56,6 @@
 
     <bool name="config_wifi_background_scan_support">true</bool>
 
-    <!-- This string array should be overridden by the device to present a list of radio
-         attributes.  This is used by the connectivity manager to decide which networks can coexist
-         based on the hardware -->
-    <!-- An Array of "[ConnectivityManager connectionType],
-                      [# simultaneous connection types]"  -->
-
     <!-- If true, the screen can be rotated via the accelerometer in all 4
          rotations as the default behavior. -->
     <bool name="config_allowAllRotations">true</bool>
@@ -96,7 +78,6 @@
         <item>com.google.android.location</item>
     </string-array>
 
-    <!-- We don't have automatic brightness (yet). -->
     <bool name="config_automatic_brightness_available">true</bool>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
@@ -134,16 +115,13 @@
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
 
-    <!-- Boolean indicating whether the wifi chipset has p2p support -->
-    <!-- <bool translatable="false" name="config_wifi_p2p_support">true</bool> -->
-
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">5</integer>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
-    <!--  Maximum number of supported users -->
+    <!-- Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
 
 </resources>
