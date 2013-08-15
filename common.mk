@@ -94,4 +94,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     hwui.render_dirty_regions=false
 
+# wifi-only device
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carrier=wifi-only
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
