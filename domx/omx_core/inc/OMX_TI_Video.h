@@ -545,8 +545,8 @@ typedef enum OMX_TI_VIDEO_CODINGTYPE {
 		(OMX_VIDEO_CODINGTYPE) OMX_VIDEO_CodingVendorStartUnused +1,  /* VP6 */
 	OMX_VIDEO_CodingVP7, /* VP7 */
         OMX_TI_VIDEO_CodingSORENSONSPK, /* Sorenson spark*/
-        OMX_VIDEO_CodingSVC,    /**< H.264/SVC */
-	OMX_VIDEO_CodingVP8 /* VP8 */
+        OMX_VIDEO_CodingSVC    /**< H.264/SVC */
+//	OMX_VIDEO_CodingVP8 /* VP8 */
 }OMX_TI_VIDEO_CODINGTYPE;
 
 
