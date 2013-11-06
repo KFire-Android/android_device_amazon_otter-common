@@ -25,22 +25,30 @@
  */
 
 static const struct sensor_t sSensorList[] = {
-        { "BMA250 3-axis Accelerometer",
-          "Bosch Sensortec GmbH",
-          1, SENSORS_HANDLE_BASE+ID_A,
-          SENSOR_TYPE_ACCELEROMETER,
-          (16.0f*GRAVITY_EARTH),
-          (16.0f*GRAVITY_EARTH)/4096,
-          0.003f,
-          0, { } },
-        { "SensorTek 22x7 Ambient Light Sensor",
-          "SensorTek",
-          1, SENSORS_HANDLE_BASE+ID_B,
-          SENSOR_TYPE_LIGHT,
-	  8192.0f,
-	  1.0f,
-	  0.5f,
-	  0, { } },
+        {
+		.name		= "BMA250 3-axis Accelerometer",
+		.vendor		= "Bosch Sensortec GmbH",
+          	.version	= 1,
+		.handle		= SENSORS_HANDLE_BASE+ID_A,
+		.type		= SENSOR_TYPE_ACCELEROMETER,
+		.maxRange	= (16.0f*GRAVITY_EARTH),
+		.resolution	= (16.0f*GRAVITY_EARTH)/4096,
+		.power		= 0.003f,
+		.minDelay	= 0,
+		.reserved	= { }
+	},
+        {
+		.name		= "SensorTek 22x7 Ambient Light Sensor",
+		.vendor		= "SensorTek",
+		.version	= 1,
+		.handle		= SENSORS_HANDLE_BASE+ID_B,
+		.type		= SENSOR_TYPE_LIGHT,
+		.maxRange	= 8192.0f,
+		.resolution	= 1.0f,
+		.power		= 0.5f,
+		.minDelay	= 0,
+		.reserved	= { }
+	},
 };
 
 static int open_sensors(const struct hw_module_t* module, const char* name,
