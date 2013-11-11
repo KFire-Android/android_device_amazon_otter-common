@@ -63,6 +63,7 @@ int STK_ALS22x7Sensor::enable(int32_t handle, int en)
         int bytes = sprintf(buffer, "%d\n", newState);
         err = write(fd, buffer, bytes);
         err = err < 0 ? -errno : 0;
+        close(fd);
     } else {
         err = -errno;
     }
