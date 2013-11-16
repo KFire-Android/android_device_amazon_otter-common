@@ -33,9 +33,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/ueventd.omap4430.rc:/root/ueventd.omap4430.rc
 
+ifdef USES_TI_MAC80211
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
+endif
 
 # Prebuilts /system/bin
 PRODUCT_COPY_FILES += \
