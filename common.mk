@@ -101,3 +101,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=wifi-only
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
+$(call inherit-product-if-exists, vendor/amazon/omap4-common/omap4-common-vendor-540_120.mk)
