@@ -51,12 +51,6 @@ PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/mixer_paths.xml:/system/etc/mixer_paths.xml \
     $(OTTER_COMMON_FOLDER)/prebuilt/etc/wifi/TQS_S_2.6.ini:/system/etc/wifi/TQS_S_2.6.ini
 
-PRODUCT_PACKAGES += \
-    wl127x-fw-4-sr.bin \
-    wl127x-fw-4-mr.bin \
-    wl127x-fw-4-plt.bin \
-    wl1271-nvs_127x.bin
-
 # Prebuilt /system/usr
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/ilitek_i2c.idc:/system/usr/idc/ilitek_i2c.idc \
