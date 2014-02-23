@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Ajustes avanzados</string>
-  <string name="category_touchscreen_title">Pantalla táctil</string>
-  <string name="touch_filter_title">Nivel de filtrado</string>
+    <string name="app_name">Ajustes avanzados</string>
+    <string name="category_touchscreen_title">Pantalla táctil</string>
+    <string name="touch_filter_title">Nivel de filtrado</string>
 </resources>
