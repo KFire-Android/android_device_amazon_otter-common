@@ -22,7 +22,7 @@
 	<path name="speaker">
 		<!-- codec output controls -->
 		<ctl name="SP driver mute" value="1" />
-		<ctl name="SP Analog Gain" value="127" />
+		<ctl name="SP Analog Gain" value="115" />
 		<ctl name="DAC Playback Volume" value="140" />
 		<ctl name="Right DAC input selection" value="right data" />
 		<ctl name="Left DAC input selection" value="left data" />
@@ -37,7 +37,7 @@
 	<path name="headphone">
 		<!-- codec out controls -->
 		<ctl name="SP driver mute" value="1" />
-		<ctl name="SP Analog Gain" value="127" />
+		<ctl name="SP Analog Gain" value="115" />
 		<ctl name="DAC Playback Volume" value="140" />
 		<ctl name="Right DAC input selection" value="right data" />
 		<ctl name="Left DAC input selection" value="left data" />
