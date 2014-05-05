@@ -31,6 +31,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/amazon/otter-common/blueto
 TI_OMAP4_CAMERAHAL_VARIANT := false
 USE_CAMERA_STUB := true
 
+# Audio
+BOARD_AUDIO_OUT_SAMPLING_RATE := 48000
+
 # WLAN Build
 WLAN_MODULES:
 	make clean -C hardware/ti/wlan/mac80211/compat_wl12xx
