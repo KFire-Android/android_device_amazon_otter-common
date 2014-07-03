@@ -91,6 +91,7 @@ endif
 
 # Recovery
 BOARD_RECOVERY_SWIPE := true
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../$(OTTER_COMMON_FOLDER)/recovery/recovery_keys.c
 
 # TWRP Config
 DEVICE_RESOLUTION := 1024x600
