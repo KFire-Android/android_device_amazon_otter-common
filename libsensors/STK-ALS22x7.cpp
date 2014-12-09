@@ -31,14 +31,12 @@
 
 STK_ALS22x7Sensor::STK_ALS22x7Sensor()
 : SensorBase(DEVICE_NAME, "lightsensor-level"),
-      mEnabled(0),
       mInputReader(32)
 {
     mPendingEvent.version = sizeof(sensors_event_t);
     mPendingEvent.sensor = ID_B;
     mPendingEvent.type = SENSOR_TYPE_LIGHT;
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
-    mEnabled = isEnabled();
 }
 
 STK_ALS22x7Sensor::~STK_ALS22x7Sensor() {
@@ -53,7 +51,7 @@ int STK_ALS22x7Sensor::enable(int32_t handle, int en)
     // ALOGD(TAG ": Setting enable: %d", en);
 
     // don't set enable state if it's already valid
-    if (mEnabled == newState) {
+    if (isEnabled() == newState) {
         return err;
     }
 

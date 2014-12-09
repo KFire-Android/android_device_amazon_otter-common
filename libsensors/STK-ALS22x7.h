@@ -42,7 +42,6 @@ public:
     void processEvent(int code, int value);
 
 protected:
-    int mEnabled;
     InputEventCircularReader mInputReader;
     sensors_event_t mPendingEvent;
 
