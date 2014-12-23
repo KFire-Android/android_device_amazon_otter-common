@@ -62,7 +62,6 @@ SGX_MODULES:
 TARGET_KERNEL_MODULES += SGX_MODULES
 
 # Filesystem
-TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun/file"
 
@@ -90,6 +89,5 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../$(OTTER_COMMON_FOLDER)/recovery/recove
 DEVICE_RESOLUTION := 1024x600
 RECOVERY_TOUCHSCREEN_SWAP_XY := true
 RECOVERY_TOUCHSCREEN_FLIP_Y := true
-TARGET_USERIMAGES_USE_EXT4 := true
 TW_BRIGHTNESS_PATH := /sys/devices/platform/omap_pwm_led/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 254
