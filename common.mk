@@ -35,6 +35,10 @@ PRODUCT_PACKAGES += \
 #    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 #endif
 
+# Rootfs
+PRODUCT_COPY_FILES += \
+    $(OTTER_COMMON_FOLDER)/init.otter-common.rc:/root/init.otter-common.rc
+
 # Prebuilts /system/bin
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/bin/bbx:/system/bin/bbx
