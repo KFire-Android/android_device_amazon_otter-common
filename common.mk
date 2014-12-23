@@ -55,8 +55,6 @@ PRODUCT_COPY_FILES += \
 # Prebuilt /system/usr
 PRODUCT_COPY_FILES += \
     $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/ilitek_i2c.idc:/system/usr/idc/ilitek_i2c.idc \
-    $(OTTER_COMMON_FOLDER)/prebuilt/usr/idc/twl6030_pwrbutton.idc:/system/usr/idc/twl6030_pwrbutton.idc \
-    $(OTTER_COMMON_FOLDER)/prebuilt/usr/keylayout/twl6030_pwrbutton.kl:/system/usr/keylayout/twl6030_pwrbutton.kl
 
 PRODUCT_PACKAGES += \
     librs_jni \
