@@ -2,8 +2,6 @@
 	<!-- These are the initial mixer settings -->
 	<!-- general -->
 	<ctl name="DL1 Equalizer" value="High-pass 0dB" />
-	<ctl name="DL2 Left Equalizer" value="High-pass 0dB" />
-	<ctl name="DL2 Right Equalizer" value="High-pass 0dB" />
 	<ctl name="DL1 Media Playback Volume" value="128" />
 	<ctl name="DL1 PDM_DL2 Switch" value="1" />
 	<ctl name="DL1 Mixer Voice" value="0" />
