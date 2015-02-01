@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2009, The Android Open Source Project
+** Copyright 2014, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@
              4 - Menu
              8 - Assistant (search)
             16 - App switch
+            32 - Camera
+            64 - Volume rocker
+           128 - Power
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">0</integer>
+    <integer name="config_deviceHardwareKeys">128</integer>
 </resources>
