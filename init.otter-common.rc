@@ -47,11 +47,14 @@ on post-fs
     # wi-fi
     setprop wifi.interface "wlan0"
     setprop softap.interface "wlan0"
+
     insmod /system/lib/modules/compat.ko
     insmod /system/lib/modules/cfg80211.ko
     insmod /system/lib/modules/mac80211.ko
     insmod /system/lib/modules/wl12xx.ko
-    insmod /system/lib/modules/wl12xx_sdio.ko
+
+    # run mac script
+    start fixmac
 
 on post-fs-data
     mkdir /data/tmp 0777 system system
@@ -62,9 +65,6 @@ on post-fs-data
     chown drmrpc drmrpc /data/smc/counter.bin
     chown drmrpc drmrpc /data/smc/storage.bin
     chown drmrpc drmrpc /data/smc/system.bin
-
-    # run mac script
-    start fixmac
 
     # mount system ro
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/system /system ro remount
