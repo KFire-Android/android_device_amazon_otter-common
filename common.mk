@@ -65,16 +65,16 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     su
 
-PRODUCT_PROPERTY_OVERRIDES += \
+ADDITIONAL_BUILD_PROPERTIES += \
     ro.sf.lcd_density=160 \
     ro.sf.hwrotation=270
 
 # Set dirty regions off
-PRODUCT_PROPERTY_OVERRIDES += \
+ADDITIONAL_BUILD_PROPERTIES += \
     hwui.render_dirty_regions=false
 
 # wifi-only device
-PRODUCT_PROPERTY_OVERRIDES += \
+ADDITIONAL_BUILD_PROPERTIES += \
     ro.carrier=wifi-only
 
 $(call inherit-product-if-exists, vendor/amazon/omap4-common/omap4-common-vendor-540_120.mk)
