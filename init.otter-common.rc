@@ -66,9 +66,6 @@ on post-fs-data
     chown drmrpc drmrpc /data/smc/storage.bin
     chown drmrpc drmrpc /data/smc/system.bin
 
-    # mount system ro
-    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/system /system ro remount
-
     setprop vold.post_fs_data_done 1
 
 on boot
