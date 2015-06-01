@@ -29,6 +29,10 @@ PRODUCT_PACKAGES += \
     regulatory.bin \
     lib_driver_cmd_wl12xx
 
+# BT vendor lib (fixes crashing)
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
 #ifdef USES_TI_MAC80211
 # Permissions
 #PRODUCT_COPY_FILES += \
